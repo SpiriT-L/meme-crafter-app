@@ -20,16 +20,13 @@ const eslintConfig = [
     plugins: {
       react: eslintPluginReact,
       reactHooks: eslintPluginReactHooks,
-      jsxA11y: eslintPluginJsxA11y,
+      'jsx-a11y': eslintPluginJsxA11y,
       prettier: eslintPluginPrettier,
     },
-    files: ['*.js', '*.ts', '*.tsx', '*.jsx'],
+    files: ['**/*.js', '**/*.ts', '**/*.tsx', '**/*.jsx'],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
-      ecmaFeatures: {
-        jsx: true,
-      },
     },
     rules: {
       semi: ['error', 'always'],
