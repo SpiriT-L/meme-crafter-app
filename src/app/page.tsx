@@ -1,4 +1,5 @@
 import ImagesDisplay from '@/components/ImagesDisplay/ImagesDisplay';
+import TextRedactor from '@/components/TextRedactor/TextRedactor';
 import Image from 'next/image';
 
 export default function Home() {
@@ -9,7 +10,9 @@ export default function Home() {
           <div className="w-1/2">
             <ImagesDisplay />
           </div>
-          <div className="w-1/2">redactor</div>
+          <div className="w-1/2">
+            <TextRedactor />
+          </div>
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
