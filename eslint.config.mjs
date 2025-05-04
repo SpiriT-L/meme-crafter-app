@@ -1,6 +1,11 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
+import eslintPluginReact from 'eslint-plugin-react';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import eslintPluginPrettier from 'eslint-plugin-prettier';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,9 +18,10 @@ const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
     plugins: {
-      react: require('eslint-plugin-react'),
-      reactHooks: require('eslint-plugin-react-hooks'),
-      jsxAlly: require('eslint-plugin-jsx-a11y'),
+      react: eslintPluginReact,
+      reactHooks: eslintPluginReactHooks,
+      jsxA11y: eslintPluginJsxA11y,
+      prettier: eslintPluginPrettier,
     },
     files: ['*.js', '*.ts', '*.tsx', '*.jsx'],
     languageOptions: {
@@ -38,6 +44,7 @@ const eslintConfig = [
       'jsx-a11y/anchor-is-valid': 'warn',
       'react/jsx-no-constructed-context-values': 'warn',
       'react/no-adjacent-inline-elements': 'warn',
+      'prettier/prettier': 'error',
     },
   },
   {
@@ -52,6 +59,7 @@ const eslintConfig = [
       '.github',
     ],
   },
+  eslintConfigPrettier,
 ];
 
 export default eslintConfig;
