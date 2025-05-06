@@ -1,6 +1,12 @@
+'use client';
+
+import { useText } from '@/context/TextContext';
+
 import React from 'react';
 
 export default function TextRedactor() {
+  const { text, setText } = useText();
+
   return (
     <>
       <h1>redactor</h1>
@@ -9,6 +15,8 @@ export default function TextRedactor() {
           <label htmlFor="text">Text</label>
           <input
             id="text"
+            value={text}
+            onChange={e => setText(e.target.value)}
             className="w-full border-[1px] border-solid border-[#eaeaea] rounded-[8px] bg-[#3e3f41] p-2"
             placeholder="Enter text here"
             type="text"
