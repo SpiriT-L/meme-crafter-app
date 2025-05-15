@@ -10,7 +10,7 @@ export default function Home() {
           <div className="w-1/2">
             <ImagesDisplay />
           </div>
-          <div className="w-1/2">
+          <div className="w-1/2 flex flex-col items-stretch self-start">
             <TextRedactor />
           </div>
         </div>

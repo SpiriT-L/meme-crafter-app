@@ -1,27 +1,16 @@
 'use client';
 
-import { useText } from '@/context/TextContext';
-
-import React from 'react';
+import ButtonItanic from './ButtonItanic';
+import InputText from './InputText';
 
 export default function TextRedactor() {
-  const { text, setText } = useText();
-
   return (
     <>
       <h1>redactor</h1>
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-2">
-          <label htmlFor="text">Text</label>
-          <input
-            id="text"
-            value={text}
-            onChange={e => setText(e.target.value)}
-            className="w-full border-[1px] border-solid border-[#eaeaea] rounded-[8px] bg-[#3e3f41] p-2"
-            placeholder="Enter text here"
-            type="text"
-          />
-        </div>
+        <ButtonItanic />
+        <InputText />
+
         <div className="flex flex-col gap-2">
           <label htmlFor="font">Font</label>
           <select
@@ -33,6 +22,7 @@ export default function TextRedactor() {
             <option value="italic">Italic</option>
           </select>
         </div>
+        {/*
         <div className="flex flex-col gap-2">
           <label htmlFor="size">Size</label>
           <input
@@ -188,7 +178,7 @@ export default function TextRedactor() {
             <option value="distribute-all-lines">Distribute All Lines</option>
             <option value="distribute-letter">Distribute Letter</option>
           </select>
-        </div>
+        </div> */}
       </div>
     </>
   );

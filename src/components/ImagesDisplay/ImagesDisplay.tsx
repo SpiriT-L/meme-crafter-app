@@ -5,7 +5,7 @@ import React from 'react';
 import Image from 'next/image';
 
 export default function ImagesDisplay() {
-  const { text } = useText();
+  const { text, isItalic } = useText();
   return (
     <>
       <Image
@@ -16,7 +16,7 @@ export default function ImagesDisplay() {
         height={1000}
         priority
       />
-      <span>{text}</span>
+      <span className={isItalic ? 'italic' : ''}>{text}</span>
     </>
   );
 }
