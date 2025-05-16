@@ -1,6 +1,7 @@
 'use client';
 
 import ButtonItanic from './ButtonItanic';
+import ButtonBold from './ButtonBold';
 import InputText from './InputText';
 
 export default function TextRedactor() {
@@ -9,6 +10,7 @@ export default function TextRedactor() {
       <h1>redactor</h1>
       <div className="flex flex-col gap-4">
         <ButtonItanic />
+        <ButtonBold />
         <InputText />
 
         <div className="flex flex-col gap-2">

@@ -5,7 +5,7 @@ import React from 'react';
 import Image from 'next/image';
 
 export default function ImagesDisplay() {
-  const { text, isItalic } = useText();
+  const { text, isItalic, isBold } = useText();
   return (
     <>
       <Image
@@ -16,7 +16,11 @@ export default function ImagesDisplay() {
         height={1000}
         priority
       />
-      <span className={isItalic ? 'italic' : ''}>{text}</span>
+      <span
+        className={`${isItalic ? 'italic' : ''} ${isBold ? 'font-bold' : ''}`.trim()}
+      >
+        {text}
+      </span>
     </>
   );
 }

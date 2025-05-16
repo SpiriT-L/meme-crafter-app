@@ -7,6 +7,8 @@ type TextContextType = {
   setText: (t: string) => void;
   isItalic: boolean;
   setIsItalic: (v: boolean) => void;
+  isBold: boolean;
+  setIsBold: (v: boolean) => void;
 };
 
 const TextContext = createContext<TextContextType>({
@@ -14,6 +16,8 @@ const TextContext = createContext<TextContextType>({
   setText: () => {},
   isItalic: false,
   setIsItalic: () => {},
+  isBold: false,
+  setIsBold: () => {},
 });
 
 export const useText = () => useContext(TextContext);
@@ -21,9 +25,12 @@ export const useText = () => useContext(TextContext);
 export function TextProvider({ children }: { children: React.ReactNode }) {
   const [text, setText] = useState('');
   const [isItalic, setIsItalic] = useState(false);
+  const [isBold, setIsBold] = useState(false);
 
   return (
-    <TextContext.Provider value={{ text, setText, isItalic, setIsItalic }}>
+    <TextContext.Provider
+      value={{ text, setText, isItalic, setIsItalic, isBold, setIsBold }}
+    >
       {children}
     </TextContext.Provider>
   );
