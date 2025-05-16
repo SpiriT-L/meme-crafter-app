@@ -3,28 +3,20 @@
 import ButtonItanic from './ButtonItanic';
 import ButtonBold from './ButtonBold';
 import InputText from './InputText';
+import TextSizeChanger from './TextSizeChanger';
 
 export default function TextRedactor() {
   return (
     <>
       <h1>redactor</h1>
-      <div className="flex flex-col gap-4">
-        <ButtonItanic />
-        <ButtonBold />
+      <div className="flex flex-col gap-4 m-1">
+        <div className="flex flex-row gap-2">
+          <ButtonBold />
+          <ButtonItanic />
+          <TextSizeChanger />
+        </div>
         <InputText />
 
-        <div className="flex flex-col gap-2">
-          <label htmlFor="font">Font</label>
-          <select
-            id="font"
-            className="w-full h-[40px] border-[1px] border-solid border-[#eaeaea] rounded-[8px] bg-[#3e3f41] p-2"
-          >
-            <option value="default">Default</option>
-            <option value="bold">Bold</option>
-            <option value="italic">Italic</option>
-          </select>
-        </div>
-        {/*
         <div className="flex flex-col gap-2">
           <label htmlFor="size">Size</label>
           <input
@@ -33,6 +25,7 @@ export default function TextRedactor() {
             className="w-full h-[40px] border-[1px] border-solid border-[#eaeaea] rounded-[8px] bg-[#3e3f41] p-4"
           />
         </div>
+        {/*
         <div className="flex flex-col gap-2">
           <label htmlFor="color">Color</label>
           <input
