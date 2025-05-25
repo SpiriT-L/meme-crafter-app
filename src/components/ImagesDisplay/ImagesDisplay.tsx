@@ -10,7 +10,7 @@ export default function ImagesDisplay() {
     <>
       <Image
         className="object-fit-cover rounded-[8px]"
-        src="/1.png"
+        src="/2.jpg"
         alt="meme"
         width={1000}
         height={1000}
