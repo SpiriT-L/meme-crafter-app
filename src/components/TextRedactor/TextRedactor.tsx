@@ -17,14 +17,6 @@ export default function TextRedactor() {
         </div>
         <InputText />
 
-        <div className="flex flex-col gap-2">
-          <label htmlFor="size">Size</label>
-          <input
-            type="number"
-            id="size"
-            className="w-full h-[40px] border-[1px] border-solid border-[#eaeaea] rounded-[8px] bg-[#3e3f41] p-4"
-          />
-        </div>
         {/*
         <div className="flex flex-col gap-2">
           <label htmlFor="color">Color</label>
